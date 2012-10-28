@@ -1,9 +1,9 @@
 //
-//  main.m
-//  Catchoom
+// © Catchoom Technologies S.L.
+// Licensed under the MIT license.
+// https://github.com/Catchoom/ios-crc/blob/master/LICENSE
 //
-//  Created by Crisredfi on 9/10/12.
-//  Copyright (c) 2012 Catchoom. All rights reserved.
+//  main.m
 //
 
 #import <UIKit/UIKit.h>

@@ -1,15 +1,10 @@
 //
-//© Catchoom Technologies S.L.
-//Licensed under the MIT license.
-//http://github.com/Catchoom/ios-crc/blob/master/LICENSE.md
+// © Catchoom Technologies S.L.
+// Licensed under the MIT license.
+// https://github.com/Catchoom/ios-crc/blob/master/LICENSE
 ////
 //  SplasScreenViewController.m
-//  Catchoom
-//
-//  Created by Crisredfi on 9/29/12.
-//  Copyright (c) 2012 Catchoom. All rights reserved.
-//
-
+//  
 #import "SplasScreenViewController.h"
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
