@@ -18,7 +18,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    [[CatchoomService sharedCatchoom] beginServerConnection];
    
        return YES;
 }
