@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D376E504173A8E5900E68462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4D9173A8E5900E68462 /* AppDelegate.m */; };
+		D376E505173A8E5900E68462 /* bg_main.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DA173A8E5900E68462 /* bg_main.png */; };
+		D376E506173A8E5900E68462 /* bg_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DB173A8E5900E68462 /* bg_main@2x.png */; };
+		D376E507173A8E5900E68462 /* bubble9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DC173A8E5900E68462 /* bubble9@2x.png */; };
+		D376E508173A8E5900E68462 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DD173A8E5900E68462 /* cameraButton.png */; };
+		D376E509173A8E5900E68462 /* cameraButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DE173A8E5900E68462 /* cameraButton@2x.png */; };
+		D376E50A173A8E5900E68462 /* Catchoom-iOS-CRC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DF173A8E5900E68462 /* Catchoom-iOS-CRC-Info.plist */; };
+		D376E50C173A8E5900E68462 /* CatchoomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4E3173A8E5900E68462 /* CatchoomCellView.m */; };
+		D376E50D173A8E5900E68462 /* catchy.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4E4173A8E5900E68462 /* catchy.png */; };
+		D376E50E173A8E5900E68462 /* catchy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4E5173A8E5900E68462 /* catchy@2x.png */; };
+		D376E50F173A8E5900E68462 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4E7173A8E5900E68462 /* DetailViewController.m */; };
+		D376E510173A8E5900E68462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D376E4E8173A8E5900E68462 /* InfoPlist.strings */; };
+		D376E511173A8E5900E68462 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D376E4EA173A8E5900E68462 /* Localizable.strings */; };
+		D376E512173A8E5900E68462 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D376E4EC173A8E5900E68462 /* MainStoryboard_iPad.storyboard */; };
+		D376E513173A8E5900E68462 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D376E4EE173A8E5900E68462 /* MainStoryboard_iPhone.storyboard */; };
+		D376E514173A8E5900E68462 /* icomGallery.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4F0173A8E5900E68462 /* icomGallery.png */; };
+		D376E515173A8E5900E68462 /* icomGallery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4F1173A8E5900E68462 /* icomGallery@2x.png */; };
+		D376E516173A8E5900E68462 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4F2173A8E5900E68462 /* icon_settings.png */; };
+		D376E517173A8E5900E68462 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4F4173A8E5900E68462 /* LogInViewController.m */; };
+		D376E518173A8E5900E68462 /* logo_title.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4F5173A8E5900E68462 /* logo_title.png */; };
+		D376E519173A8E5900E68462 /* logo_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4F6173A8E5900E68462 /* logo_title@2x.png */; };
+		D376E51A173A8E5900E68462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4F7173A8E5900E68462 /* main.m */; };
+		D376E51B173A8E5900E68462 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4F9173A8E5900E68462 /* MasterViewController.m */; };
+		D376E51C173A8E5900E68462 /* shinyRedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4FA173A8E5900E68462 /* shinyRedButton.png */; };
+		D376E51D173A8E5900E68462 /* shinyRedButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4FB173A8E5900E68462 /* shinyRedButton@2x.png */; };
+		D376E51E173A8E5900E68462 /* SplasScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4FD173A8E5900E68462 /* SplasScreenViewController.m */; };
+		D376E51F173A8E5900E68462 /* UIStoryboardPushNoAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4FF173A8E5900E68462 /* UIStoryboardPushNoAnimation.m */; };
+		D376E520173A8E5900E68462 /* UIStoryboardSegueNoAnim.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E501173A8E5900E68462 /* UIStoryboardSegueNoAnim.m */; };
+		D376E521173A8E5900E68462 /* viewport.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E502173A8E5900E68462 /* viewport.png */; };
+		D376E522173A8E5900E68462 /* viewport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E503173A8E5900E68462 /* viewport@2x.png */; };
+		F01511F61618500B005D4335 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F51618500B005D4335 /* Icon-72.png */; };
+		F01511F816185020005D4335 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F716185020005D4335 /* Icon.png */; };
+		F01511FA16185026005D4335 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F916185026005D4335 /* Icon@2x.png */; };
+		F01E1B341613A29000954BE3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F01E1B331613A29000954BE3 /* Default@2x.png */; };
+		F01E1B361613A29F00954BE3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F01E1B351613A29F00954BE3 /* Default.png */; };
+		F01E1B381613A2A500954BE3 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F01E1B371613A2A500954BE3 /* Default-Landscape@2x~ipad.png */; };
+		F01E1B3A1613A2AB00954BE3 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F01E1B391613A2AB00954BE3 /* Default-Landscape~ipad.png */; };
+		F026D62E15FE962E00AC3FC9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F026D62D15FE962E00AC3FC9 /* CFNetwork.framework */; };
+		F026D63215FE964B00AC3FC9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F026D63115FE964B00AC3FC9 /* Security.framework */; };
+		F026D63415FE965500AC3FC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F026D63315FE965500AC3FC9 /* SystemConfiguration.framework */; };
+		F026D63615FE965E00AC3FC9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F026D63515FE965E00AC3FC9 /* QuartzCore.framework */; };
+		F03F112D160A8E0900F1CEBD /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F026D63715FE966A00AC3FC9 /* libxml2.dylib */; };
+		F03F113C160A8F1900F1CEBD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F026D62F15FE964200AC3FC9 /* MobileCoreServices.framework */; };
+		F0669357160B9B5A00798412 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0669356160B9B5A00798412 /* Default-568h@2x.png */; };
+		F0A1A3E215FE928400F9ACEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1A3E115FE928400F9ACEA /* UIKit.framework */; };
+		F0A1A3E415FE928400F9ACEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1A3E315FE928400F9ACEA /* Foundation.framework */; };
+		F0A1A3E615FE928400F9ACEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1A3E515FE928400F9ACEA /* CoreGraphics.framework */; };
+		F0A1A3E815FE928400F9ACEA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1A3E715FE928400F9ACEA /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D376E4D8173A8E5900E68462 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D376E4D9173A8E5900E68462 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D376E4DA173A8E5900E68462 /* bg_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main.png; sourceTree = "<group>"; };
+		D376E4DB173A8E5900E68462 /* bg_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_main@2x.png"; sourceTree = "<group>"; };
+		D376E4DC173A8E5900E68462 /* bubble9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble9@2x.png"; sourceTree = "<group>"; };
+		D376E4DD173A8E5900E68462 /* cameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraButton.png; sourceTree = "<group>"; };
+		D376E4DE173A8E5900E68462 /* cameraButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraButton@2x.png"; sourceTree = "<group>"; };
+		D376E4DF173A8E5900E68462 /* Catchoom-iOS-CRC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Catchoom-iOS-CRC-Info.plist"; sourceTree = "<group>"; };
+		D376E4E0173A8E5900E68462 /* Catchoom-iOS-CRC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Catchoom-iOS-CRC-Prefix.pch"; sourceTree = "<group>"; };
+		D376E4E2173A8E5900E68462 /* CatchoomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatchoomCellView.h; sourceTree = "<group>"; };
+		D376E4E3173A8E5900E68462 /* CatchoomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchoomCellView.m; sourceTree = "<group>"; };
+		D376E4E4173A8E5900E68462 /* catchy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catchy.png; sourceTree = "<group>"; };
+		D376E4E5173A8E5900E68462 /* catchy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catchy@2x.png"; sourceTree = "<group>"; };
+		D376E4E6173A8E5900E68462 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D376E4E7173A8E5900E68462 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D376E4E9173A8E5900E68462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D376E4EB173A8E5900E68462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D376E4ED173A8E5900E68462 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		D376E4EF173A8E5900E68462 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		D376E4F0173A8E5900E68462 /* icomGallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icomGallery.png; sourceTree = "<group>"; };
+		D376E4F1173A8E5900E68462 /* icomGallery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icomGallery@2x.png"; sourceTree = "<group>"; };
+		D376E4F2173A8E5900E68462 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
+		D376E4F3173A8E5900E68462 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		D376E4F4173A8E5900E68462 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		D376E4F5173A8E5900E68462 /* logo_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_title.png; sourceTree = "<group>"; };
+		D376E4F6173A8E5900E68462 /* logo_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_title@2x.png"; sourceTree = "<group>"; };
+		D376E4F7173A8E5900E68462 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D376E4F8173A8E5900E68462 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		D376E4F9173A8E5900E68462 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		D376E4FA173A8E5900E68462 /* shinyRedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shinyRedButton.png; sourceTree = "<group>"; };
+		D376E4FB173A8E5900E68462 /* shinyRedButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shinyRedButton@2x.png"; sourceTree = "<group>"; };
+		D376E4FC173A8E5900E68462 /* SplasScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplasScreenViewController.h; sourceTree = "<group>"; };
+		D376E4FD173A8E5900E68462 /* SplasScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplasScreenViewController.m; sourceTree = "<group>"; };
+		D376E4FE173A8E5900E68462 /* UIStoryboardPushNoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStoryboardPushNoAnimation.h; sourceTree = "<group>"; };
+		D376E4FF173A8E5900E68462 /* UIStoryboardPushNoAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStoryboardPushNoAnimation.m; sourceTree = "<group>"; };
+		D376E500173A8E5900E68462 /* UIStoryboardSegueNoAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStoryboardSegueNoAnim.h; sourceTree = "<group>"; };
+		D376E501173A8E5900E68462 /* UIStoryboardSegueNoAnim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStoryboardSegueNoAnim.m; sourceTree = "<group>"; };
+		D376E502173A8E5900E68462 /* viewport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewport.png; sourceTree = "<group>"; };
+		D376E503173A8E5900E68462 /* viewport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "viewport@2x.png"; sourceTree = "<group>"; };
+		F01511F51618500B005D4335 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		F01511F716185020005D4335 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		F01511F916185026005D4335 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		F01E1B331613A29000954BE3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F01E1B351613A29F00954BE3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F01E1B371613A2A500954BE3 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		F01E1B391613A2AB00954BE3 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		F026D62D15FE962E00AC3FC9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F026D62F15FE964200AC3FC9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F026D63115FE964B00AC3FC9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F026D63315FE965500AC3FC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F026D63515FE965E00AC3FC9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F026D63715FE966A00AC3FC9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		F0669356160B9B5A00798412 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F0A1A3DD15FE928400F9ACEA /* Catchoom-iOS-CRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catchoom-iOS-CRC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A1A3E115FE928400F9ACEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F0A1A3E315FE928400F9ACEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F0A1A3E515FE928400F9ACEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F0A1A3E715FE928400F9ACEA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0A1A3DA15FE928400F9ACEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F03F113C160A8F1900F1CEBD /* MobileCoreServices.framework in Frameworks */,
+				F03F112D160A8E0900F1CEBD /* libxml2.dylib in Frameworks */,
+				F026D63615FE965E00AC3FC9 /* QuartzCore.framework in Frameworks */,
+				F026D63415FE965500AC3FC9 /* SystemConfiguration.framework in Frameworks */,
+				F026D63215FE964B00AC3FC9 /* Security.framework in Frameworks */,
+				F0A1A3E815FE928400F9ACEA /* CoreData.framework in Frameworks */,
+				F026D62E15FE962E00AC3FC9 /* CFNetwork.framework in Frameworks */,
+				F0A1A3E215FE928400F9ACEA /* UIKit.framework in Frameworks */,
+				F0A1A3E415FE928400F9ACEA /* Foundation.framework in Frameworks */,
+				F0A1A3E615FE928400F9ACEA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D376E4D7173A8E5900E68462 /* Catchoom-iOS-CRC */ = {
+			isa = PBXGroup;
+			children = (
+				D376E4D8173A8E5900E68462 /* AppDelegate.h */,
+				D376E4D9173A8E5900E68462 /* AppDelegate.m */,
+				D376E525173A8EC500E68462 /* Supporting Files */,
+				D376E4E2173A8E5900E68462 /* CatchoomCellView.h */,
+				D376E4E3173A8E5900E68462 /* CatchoomCellView.m */,
+				D376E4E6173A8E5900E68462 /* DetailViewController.h */,
+				D376E4E7173A8E5900E68462 /* DetailViewController.m */,
+				D376E524173A8E8B00E68462 /* storyboards */,
+				D376E4F3173A8E5900E68462 /* LogInViewController.h */,
+				D376E4F4173A8E5900E68462 /* LogInViewController.m */,
+				D376E4F8173A8E5900E68462 /* MasterViewController.h */,
+				D376E4F9173A8E5900E68462 /* MasterViewController.m */,
+				D376E4FC173A8E5900E68462 /* SplasScreenViewController.h */,
+				D376E4FD173A8E5900E68462 /* SplasScreenViewController.m */,
+				D376E523173A8E7600E68462 /* Helpers */,
+			);
+			path = "Catchoom-iOS-CRC";
+			sourceTree = "<group>";
+		};
+		D376E523173A8E7600E68462 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D376E4FE173A8E5900E68462 /* UIStoryboardPushNoAnimation.h */,
+				D376E4FF173A8E5900E68462 /* UIStoryboardPushNoAnimation.m */,
+				D376E500173A8E5900E68462 /* UIStoryboardSegueNoAnim.h */,
+				D376E501173A8E5900E68462 /* UIStoryboardSegueNoAnim.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D376E524173A8E8B00E68462 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D376E4EC173A8E5900E68462 /* MainStoryboard_iPad.storyboard */,
+				D376E4EE173A8E5900E68462 /* MainStoryboard_iPhone.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		D376E525173A8EC500E68462 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D376E526173A8F0200E68462 /* Assets */,
+				D376E4DF173A8E5900E68462 /* Catchoom-iOS-CRC-Info.plist */,
+				D376E4E0173A8E5900E68462 /* Catchoom-iOS-CRC-Prefix.pch */,
+				D376E4E8173A8E5900E68462 /* InfoPlist.strings */,
+				D376E4EA173A8E5900E68462 /* Localizable.strings */,
+				D376E4F7173A8E5900E68462 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D376E526173A8F0200E68462 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D376E527173A8F2700E68462 /* non retina */,
+				D376E528173A8F5100E68462 /* iPhoneRetina */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		D376E527173A8F2700E68462 /* non retina */ = {
+			isa = PBXGroup;
+			children = (
+				D376E4DA173A8E5900E68462 /* bg_main.png */,
+				D376E4DD173A8E5900E68462 /* cameraButton.png */,
+				D376E4E4173A8E5900E68462 /* catchy.png */,
+				D376E4F0173A8E5900E68462 /* icomGallery.png */,
+				D376E4F2173A8E5900E68462 /* icon_settings.png */,
+				D376E4F5173A8E5900E68462 /* logo_title.png */,
+				D376E4FA173A8E5900E68462 /* shinyRedButton.png */,
+				D376E502173A8E5900E68462 /* viewport.png */,
+			);
+			name = "non retina";
+			sourceTree = "<group>";
+		};
+		D376E528173A8F5100E68462 /* iPhoneRetina */ = {
+			isa = PBXGroup;
+			children = (
+				D376E4DB173A8E5900E68462 /* bg_main@2x.png */,
+				D376E4DC173A8E5900E68462 /* bubble9@2x.png */,
+				D376E4DE173A8E5900E68462 /* cameraButton@2x.png */,
+				D376E4E5173A8E5900E68462 /* catchy@2x.png */,
+				D376E4F1173A8E5900E68462 /* icomGallery@2x.png */,
+				D376E4F6173A8E5900E68462 /* logo_title@2x.png */,
+				D376E4FB173A8E5900E68462 /* shinyRedButton@2x.png */,
+				D376E503173A8E5900E68462 /* viewport@2x.png */,
+			);
+			name = iPhoneRetina;
+			sourceTree = "<group>";
+		};
+		F0A1A3D215FE928400F9ACEA = {
+			isa = PBXGroup;
+			children = (
+				D376E4D7173A8E5900E68462 /* Catchoom-iOS-CRC */,
+				F01511F916185026005D4335 /* Icon@2x.png */,
+				F01511F716185020005D4335 /* Icon.png */,
+				F01511F51618500B005D4335 /* Icon-72.png */,
+				F01E1B391613A2AB00954BE3 /* Default-Landscape~ipad.png */,
+				F01E1B371613A2A500954BE3 /* Default-Landscape@2x~ipad.png */,
+				F01E1B351613A29F00954BE3 /* Default.png */,
+				F01E1B331613A29000954BE3 /* Default@2x.png */,
+				F0669356160B9B5A00798412 /* Default-568h@2x.png */,
+				F0A1A3E015FE928400F9ACEA /* Frameworks */,
+				F0A1A3DE15FE928400F9ACEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0A1A3DE15FE928400F9ACEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1A3DD15FE928400F9ACEA /* Catchoom-iOS-CRC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0A1A3E015FE928400F9ACEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F026D63715FE966A00AC3FC9 /* libxml2.dylib */,
+				F026D63515FE965E00AC3FC9 /* QuartzCore.framework */,
+				F026D63315FE965500AC3FC9 /* SystemConfiguration.framework */,
+				F026D63115FE964B00AC3FC9 /* Security.framework */,
+				F026D62F15FE964200AC3FC9 /* MobileCoreServices.framework */,
+				F026D62D15FE962E00AC3FC9 /* CFNetwork.framework */,
+				F0A1A3E115FE928400F9ACEA /* UIKit.framework */,
+				F0A1A3E315FE928400F9ACEA /* Foundation.framework */,
+				F0A1A3E515FE928400F9ACEA /* CoreGraphics.framework */,
+				F0A1A3E715FE928400F9ACEA /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0A1A3DC15FE928400F9ACEA /* Catchoom-iOS-CRC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A1A40615FE928400F9ACEA /* Build configuration list for PBXNativeTarget "Catchoom-iOS-CRC" */;
+			buildPhases = (
+				F0A1A3D915FE928400F9ACEA /* Sources */,
+				F0A1A3DA15FE928400F9ACEA /* Frameworks */,
+				F0A1A3DB15FE928400F9ACEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Catchoom-iOS-CRC";
+			productName = Catchoom;
+			productReference = F0A1A3DD15FE928400F9ACEA /* Catchoom-iOS-CRC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0A1A3D415FE928400F9ACEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = Catchoom;
+			};
+			buildConfigurationList = F0A1A3D715FE928400F9ACEA /* Build configuration list for PBXProject "Catchoom-iOS-CRC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F0A1A3D215FE928400F9ACEA;
+			productRefGroup = F0A1A3DE15FE928400F9ACEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0A1A3DC15FE928400F9ACEA /* Catchoom-iOS-CRC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0A1A3DB15FE928400F9ACEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0669357160B9B5A00798412 /* Default-568h@2x.png in Resources */,
+				F01E1B341613A29000954BE3 /* Default@2x.png in Resources */,
+				F01E1B361613A29F00954BE3 /* Default.png in Resources */,
+				F01E1B381613A2A500954BE3 /* Default-Landscape@2x~ipad.png in Resources */,
+				F01E1B3A1613A2AB00954BE3 /* Default-Landscape~ipad.png in Resources */,
+				F01511F61618500B005D4335 /* Icon-72.png in Resources */,
+				F01511F816185020005D4335 /* Icon.png in Resources */,
+				F01511FA16185026005D4335 /* Icon@2x.png in Resources */,
+				D376E505173A8E5900E68462 /* bg_main.png in Resources */,
+				D376E506173A8E5900E68462 /* bg_main@2x.png in Resources */,
+				D376E507173A8E5900E68462 /* bubble9@2x.png in Resources */,
+				D376E508173A8E5900E68462 /* cameraButton.png in Resources */,
+				D376E509173A8E5900E68462 /* cameraButton@2x.png in Resources */,
+				D376E50A173A8E5900E68462 /* Catchoom-iOS-CRC-Info.plist in Resources */,
+				D376E50D173A8E5900E68462 /* catchy.png in Resources */,
+				D376E50E173A8E5900E68462 /* catchy@2x.png in Resources */,
+				D376E510173A8E5900E68462 /* InfoPlist.strings in Resources */,
+				D376E511173A8E5900E68462 /* Localizable.strings in Resources */,
+				D376E512173A8E5900E68462 /* MainStoryboard_iPad.storyboard in Resources */,
+				D376E513173A8E5900E68462 /* MainStoryboard_iPhone.storyboard in Resources */,
+				D376E514173A8E5900E68462 /* icomGallery.png in Resources */,
+				D376E515173A8E5900E68462 /* icomGallery@2x.png in Resources */,
+				D376E516173A8E5900E68462 /* icon_settings.png in Resources */,
+				D376E518173A8E5900E68462 /* logo_title.png in Resources */,
+				D376E519173A8E5900E68462 /* logo_title@2x.png in Resources */,
+				D376E51C173A8E5900E68462 /* shinyRedButton.png in Resources */,
+				D376E51D173A8E5900E68462 /* shinyRedButton@2x.png in Resources */,
+				D376E521173A8E5900E68462 /* viewport.png in Resources */,
+				D376E522173A8E5900E68462 /* viewport@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0A1A3D915FE928400F9ACEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D376E504173A8E5900E68462 /* AppDelegate.m in Sources */,
+				D376E50C173A8E5900E68462 /* CatchoomCellView.m in Sources */,
+				D376E50F173A8E5900E68462 /* DetailViewController.m in Sources */,
+				D376E517173A8E5900E68462 /* LogInViewController.m in Sources */,
+				D376E51A173A8E5900E68462 /* main.m in Sources */,
+				D376E51B173A8E5900E68462 /* MasterViewController.m in Sources */,
+				D376E51E173A8E5900E68462 /* SplasScreenViewController.m in Sources */,
+				D376E51F173A8E5900E68462 /* UIStoryboardPushNoAnimation.m in Sources */,
+				D376E520173A8E5900E68462 /* UIStoryboardSegueNoAnim.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D376E4E8173A8E5900E68462 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D376E4E9173A8E5900E68462 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D376E4EA173A8E5900E68462 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D376E4EB173A8E5900E68462 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D376E4EC173A8E5900E68462 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D376E4ED173A8E5900E68462 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		D376E4EE173A8E5900E68462 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D376E4EF173A8E5900E68462 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0A1A40415FE928400F9ACEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		F0A1A40515FE928400F9ACEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
+		F0A1A40715FE928400F9ACEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Catchoom-iOS-CRC/Catchoom-iOS-CRC-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"”$(OBJROOT)/UninstalledProducts/include”",
+					"”$(TARGET_BUILD_DIR)/usr/local/lib/include”",
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
+				INFOPLIST_FILE = "Catchoom-iOS-CRC/Catchoom-iOS-CRC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Catchoom\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Catchoom-fyvafokpcqgnqregvpjhhiwuesan/Build/Products/Debug-iphoneos\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F0A1A40815FE928400F9ACEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Catchoom-iOS-CRC/Catchoom-iOS-CRC-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"”$(OBJROOT)/UninstalledProducts/include”",
+					"”$(TARGET_BUILD_DIR)/usr/local/lib/include”",
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
+				INFOPLIST_FILE = "Catchoom-iOS-CRC/Catchoom-iOS-CRC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Catchoom\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Catchoom-fyvafokpcqgnqregvpjhhiwuesan/Build/Products/Debug-iphoneos\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0A1A3D715FE928400F9ACEA /* Build configuration list for PBXProject "Catchoom-iOS-CRC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A1A40415FE928400F9ACEA /* Debug */,
+				F0A1A40515FE928400F9ACEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F0A1A40615FE928400F9ACEA /* Build configuration list for PBXNativeTarget "Catchoom-iOS-CRC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A1A40715FE928400F9ACEA /* Debug */,
+				F0A1A40815FE928400F9ACEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0A1A3D415FE928400F9ACEA /* Project object */;
+}
