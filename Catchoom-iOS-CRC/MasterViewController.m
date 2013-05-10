@@ -33,8 +33,9 @@
 #pragma mark - class definition
 
 @interface MasterViewController () {
-     NSMutableArray *_parsedElements;
+    NSMutableArray *_parsedElements;
     UIView *_activityIndicatorView;
+    BOOL _hasFoundMatches;
 
     __weak IBOutlet UIBarButtonItem *retakePictureButton;
     __weak IBOutlet UIBarButtonItem *cameraButton;
@@ -221,16 +222,26 @@
 
 - (IBAction)takeImageFromCamera:(id)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-    }else{
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if ([prefs boolForKey:@"finder_mode"]) {
+        // Finder Mode
+        NSLog(@"finder mode");
+        [[CatchoomService sharedCatchoom] setDelegate: self];
+        [[CatchoomService sharedCatchoom] startFinderMode:0.5 withPreview:self.view];
+
     }
-    picker.delegate = self;
-    [self presentModalViewController:picker animated:YES];
+    else{
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        {
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            
+        }else{
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        picker.delegate = self;
+        [self presentModalViewController:picker animated:YES];
+    }
 }
 
 - (IBAction)pickImageFromResources:(id)sender
@@ -324,12 +335,39 @@
 
     [_parsedElements removeAllObjects]; //remove all existing objects!
     _parsedElements = [responseObjects mutableCopy];
-    [self.tableView reloadData];
     
-    __weak MasterViewController *currentSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [currentSelf willHideActivityIndicatorInMasterView];
-    });
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if ([prefs boolForKey:@"finder_mode"]) {
+        if ([_parsedElements count] == 0) {
+            NSLog(@"No matches found.");
+        }
+        else{
+            NSLog(@"Matches found.");
+            if (_hasFoundMatches == FALSE) {
+                _hasFoundMatches = TRUE;
+                NSLog(@"Stopping capture and showing results.");
+                [[CatchoomService sharedCatchoom] stopFinderMode];
+                
+                [self.tableView reloadData];
+                
+                __weak MasterViewController *currentSelf = self;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [currentSelf willHideActivityIndicatorInMasterView];
+                });
+                
+            }
+            
+        }
+    }
+    else{
+        [self.tableView reloadData];
+        
+        __weak MasterViewController *currentSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [currentSelf willHideActivityIndicatorInMasterView];
+        });
+    }
+    
 }
 
 - (void)didFailLoadWithError:(NSError *)error {

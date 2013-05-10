@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "LogInViewController.h"
 #import "MasterViewController.h"
-#import <CRSMobile/CRSMobile.h>
+#import <Catchoom-iOS-SDK/Catchoom-iOS-SDK.h>
 
 
 @implementation AppDelegate

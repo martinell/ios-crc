@@ -7,7 +7,7 @@
 //  
 
 #import <UIKit/UIKit.h>
-#import <CRSMobile/CRSMobile.h>
+#import <Catchoom-iOS-SDK/Catchoom-iOS-SDK.h>
 
 
 @interface SplasScreenViewController : UIViewController

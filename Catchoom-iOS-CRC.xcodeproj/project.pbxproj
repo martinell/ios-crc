@@ -37,6 +37,10 @@
 		D376E520173A8E5900E68462 /* UIStoryboardSegueNoAnim.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E501173A8E5900E68462 /* UIStoryboardSegueNoAnim.m */; };
 		D376E521173A8E5900E68462 /* viewport.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E502173A8E5900E68462 /* viewport.png */; };
 		D376E522173A8E5900E68462 /* viewport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E503173A8E5900E68462 /* viewport@2x.png */; };
+		D3D1D523173C62A000BFEAE0 /* libCatchoom-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D1D520173C5E3600BFEAE0 /* libCatchoom-iOS-SDK.a */; };
+		D3E6E191173C6B90001D7BE2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E6E190173C6B90001D7BE2 /* ImageIO.framework */; };
+		D3E6E193173C6BAC001D7BE2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E6E192173C6BAC001D7BE2 /* AVFoundation.framework */; };
+		D3E6E195173C6CCE001D7BE2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3E6E194173C6CCE001D7BE2 /* Settings.bundle */; };
 		F01511F61618500B005D4335 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F51618500B005D4335 /* Icon-72.png */; };
 		F01511F816185020005D4335 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F716185020005D4335 /* Icon.png */; };
 		F01511FA16185026005D4335 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F916185026005D4335 /* Icon@2x.png */; };
@@ -57,9 +61,26 @@
 		F0A1A3E815FE928400F9ACEA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1A3E715FE928400F9ACEA /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D3D1D51F173C5E3600BFEAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F073FDC7162F2E3100054A56;
+			remoteInfo = "Catchoom-iOS-SDK";
+		};
+		D3D1D521173C622300BFEAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F073FDC6162F2E3100054A56;
+			remoteInfo = "Catchoom-iOS-SDK";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D376E4D8173A8E5900E68462 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D376E4D9173A8E5900E68462 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D376E4D9173A8E5900E68462 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D376E4DA173A8E5900E68462 /* bg_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main.png; sourceTree = "<group>"; };
 		D376E4DB173A8E5900E68462 /* bg_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_main@2x.png"; sourceTree = "<group>"; };
 		D376E4DC173A8E5900E68462 /* bubble9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble9@2x.png"; sourceTree = "<group>"; };
@@ -80,16 +101,16 @@
 		D376E4F0173A8E5900E68462 /* icomGallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icomGallery.png; sourceTree = "<group>"; };
 		D376E4F1173A8E5900E68462 /* icomGallery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icomGallery@2x.png"; sourceTree = "<group>"; };
 		D376E4F2173A8E5900E68462 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
-		D376E4F3173A8E5900E68462 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		D376E4F3173A8E5900E68462 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LogInViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D376E4F4173A8E5900E68462 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		D376E4F5173A8E5900E68462 /* logo_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_title.png; sourceTree = "<group>"; };
 		D376E4F6173A8E5900E68462 /* logo_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_title@2x.png"; sourceTree = "<group>"; };
 		D376E4F7173A8E5900E68462 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D376E4F8173A8E5900E68462 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		D376E4F8173A8E5900E68462 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MasterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D376E4F9173A8E5900E68462 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		D376E4FA173A8E5900E68462 /* shinyRedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shinyRedButton.png; sourceTree = "<group>"; };
 		D376E4FB173A8E5900E68462 /* shinyRedButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shinyRedButton@2x.png"; sourceTree = "<group>"; };
-		D376E4FC173A8E5900E68462 /* SplasScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplasScreenViewController.h; sourceTree = "<group>"; };
+		D376E4FC173A8E5900E68462 /* SplasScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SplasScreenViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D376E4FD173A8E5900E68462 /* SplasScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplasScreenViewController.m; sourceTree = "<group>"; };
 		D376E4FE173A8E5900E68462 /* UIStoryboardPushNoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStoryboardPushNoAnimation.h; sourceTree = "<group>"; };
 		D376E4FF173A8E5900E68462 /* UIStoryboardPushNoAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStoryboardPushNoAnimation.m; sourceTree = "<group>"; };
@@ -97,6 +118,10 @@
 		D376E501173A8E5900E68462 /* UIStoryboardSegueNoAnim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStoryboardSegueNoAnim.m; sourceTree = "<group>"; };
 		D376E502173A8E5900E68462 /* viewport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewport.png; sourceTree = "<group>"; };
 		D376E503173A8E5900E68462 /* viewport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "viewport@2x.png"; sourceTree = "<group>"; };
+		D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Catchoom-iOS-SDK.xcodeproj"; path = "ios-sdk/Catchoom-iOS-SDK.xcodeproj"; sourceTree = "<group>"; };
+		D3E6E190173C6B90001D7BE2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D3E6E192173C6BAC001D7BE2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D3E6E194173C6CCE001D7BE2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		F01511F51618500B005D4335 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		F01511F716185020005D4335 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		F01511F916185026005D4335 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -123,6 +148,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E6E193173C6BAC001D7BE2 /* AVFoundation.framework in Frameworks */,
+				D3E6E191173C6B90001D7BE2 /* ImageIO.framework in Frameworks */,
+				D3D1D523173C62A000BFEAE0 /* libCatchoom-iOS-SDK.a in Frameworks */,
 				F03F113C160A8F1900F1CEBD /* MobileCoreServices.framework in Frameworks */,
 				F03F112D160A8E0900F1CEBD /* libxml2.dylib in Frameworks */,
 				F026D63615FE965E00AC3FC9 /* QuartzCore.framework in Frameworks */,
@@ -190,6 +218,7 @@
 				D376E4E8173A8E5900E68462 /* InfoPlist.strings */,
 				D376E4EA173A8E5900E68462 /* Localizable.strings */,
 				D376E4F7173A8E5900E68462 /* main.m */,
+				D3E6E194173C6CCE001D7BE2 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,9 +262,18 @@
 			name = iPhoneRetina;
 			sourceTree = "<group>";
 		};
+		D3D1D51B173C5E3600BFEAE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3D1D520173C5E3600BFEAE0 /* libCatchoom-iOS-SDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F0A1A3D215FE928400F9ACEA = {
 			isa = PBXGroup;
 			children = (
+				D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */,
 				D376E4D7173A8E5900E68462 /* Catchoom-iOS-CRC */,
 				F01511F916185026005D4335 /* Icon@2x.png */,
 				F01511F716185020005D4335 /* Icon.png */,
@@ -261,6 +299,8 @@
 		F0A1A3E015FE928400F9ACEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3E6E192173C6BAC001D7BE2 /* AVFoundation.framework */,
+				D3E6E190173C6B90001D7BE2 /* ImageIO.framework */,
 				F026D63715FE966A00AC3FC9 /* libxml2.dylib */,
 				F026D63515FE965E00AC3FC9 /* QuartzCore.framework */,
 				F026D63315FE965500AC3FC9 /* SystemConfiguration.framework */,
@@ -289,6 +329,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D3D1D522173C622300BFEAE0 /* PBXTargetDependency */,
 			);
 			name = "Catchoom-iOS-CRC";
 			productName = Catchoom;
@@ -314,12 +355,28 @@
 			mainGroup = F0A1A3D215FE928400F9ACEA;
 			productRefGroup = F0A1A3DE15FE928400F9ACEA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D3D1D51B173C5E3600BFEAE0 /* Products */;
+					ProjectRef = D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F0A1A3DC15FE928400F9ACEA /* Catchoom-iOS-CRC */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D3D1D520173C5E3600BFEAE0 /* libCatchoom-iOS-SDK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCatchoom-iOS-SDK.a";
+			remoteRef = D3D1D51F173C5E3600BFEAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F0A1A3DB15FE928400F9ACEA /* Resources */ = {
@@ -355,6 +412,7 @@
 				D376E51D173A8E5900E68462 /* shinyRedButton@2x.png in Resources */,
 				D376E521173A8E5900E68462 /* viewport.png in Resources */,
 				D376E522173A8E5900E68462 /* viewport@2x.png in Resources */,
+				D3E6E195173C6CCE001D7BE2 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +436,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3D1D522173C622300BFEAE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Catchoom-iOS-SDK";
+			targetProxy = D3D1D521173C622300BFEAE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D376E4E8173A8E5900E68462 /* InfoPlist.strings */ = {
@@ -471,7 +537,7 @@
 		F0A1A40715FE928400F9ACEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv7;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -486,8 +552,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/Catchoom\"",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Catchoom-fyvafokpcqgnqregvpjhhiwuesan/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Catchoom-iOS-CRC\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -496,7 +561,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -504,7 +569,7 @@
 		F0A1A40815FE928400F9ACEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv7;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catchoom-iOS-CRC/Catchoom-iOS-CRC-Prefix.pch";
@@ -518,8 +583,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/Catchoom\"",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Catchoom-fyvafokpcqgnqregvpjhhiwuesan/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Catchoom-iOS-CRC\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -527,7 +591,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
