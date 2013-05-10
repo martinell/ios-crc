@@ -225,9 +225,9 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs boolForKey:@"finder_mode"]) {
         // Finder Mode
-        NSLog(@"finder mode");
+        _hasFoundMatches = FALSE;
         [[CatchoomService sharedCatchoom] setDelegate: self];
-        [[CatchoomService sharedCatchoom] startFinderMode:0.5 withPreview:self.view];
+        [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview:self.view];
 
     }
     else{
@@ -337,26 +337,24 @@
     _parsedElements = [responseObjects mutableCopy];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if ([prefs boolForKey:@"finder_mode"]) {
+    if ([prefs boolForKey:@"finder_mode"])
+    {
         if ([_parsedElements count] == 0) {
             NSLog(@"No matches found.");
         }
-        else{
-            NSLog(@"Matches found.");
-            if (_hasFoundMatches == FALSE) {
-                _hasFoundMatches = TRUE;
-                NSLog(@"Stopping capture and showing results.");
-                [[CatchoomService sharedCatchoom] stopFinderMode];
-                
-                [self.tableView reloadData];
-                
-                __weak MasterViewController *currentSelf = self;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [currentSelf willHideActivityIndicatorInMasterView];
-                });
-                
-            }
+        else if(_hasFoundMatches == FALSE)
+        {
+            NSLog(@"%d Matches found",[_parsedElements count]);
             
+            _hasFoundMatches = TRUE;
+            [[CatchoomService sharedCatchoom] stopFinderMode];
+            
+            [self.tableView reloadData];
+            
+            __weak MasterViewController *currentSelf = self;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [currentSelf willHideActivityIndicatorInMasterView];
+            });
         }
     }
     else{
