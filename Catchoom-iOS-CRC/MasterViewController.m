@@ -35,7 +35,6 @@
 @interface MasterViewController () {
     NSMutableArray *_parsedElements;
     UIView *_activityIndicatorView;
-    BOOL _hasFoundMatches;
 
     __weak IBOutlet UIBarButtonItem *retakePictureButton;
     __weak IBOutlet UIBarButtonItem *cameraButton;
@@ -44,7 +43,7 @@
 @end
 
 @implementation MasterViewController
-@synthesize myPopoverControler = _myPopoverControler;
+@synthesize myPopoverController = _myPopoverController;
 
 
 - (void)awakeFromNib
@@ -225,10 +224,12 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs boolForKey:@"finder_mode"]) {
         // Finder Mode
-        _hasFoundMatches = FALSE;
         [[CatchoomService sharedCatchoom] setDelegate: self];
-        [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview:self.view];
-
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController.view];
+        }
+        else
+            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.view];
     }
     else{
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -250,8 +251,8 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 
-        if ([self.myPopoverControler isPopoverVisible]) {
-            [self.myPopoverControler dismissPopoverAnimated:YES];
+        if ([self.myPopoverController isPopoverVisible]) {
+            [self.myPopoverController dismissPopoverAnimated:YES];
         } else {
             if ([UIImagePickerController isSourceTypeAvailable:
                  UIImagePickerControllerSourceTypeSavedPhotosAlbum])
@@ -260,12 +261,12 @@
                 imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                 imagePicker.delegate = self;
                 imagePicker.allowsEditing = NO;
-                self.myPopoverControler = [[UIPopoverController alloc]
+                self.myPopoverController = [[UIPopoverController alloc]
                                            initWithContentViewController:imagePicker];
                 
-                _myPopoverControler.delegate = self;
+                _myPopoverController.delegate = self;
                 
-                [self.myPopoverControler presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp  animated:YES];
+                [self.myPopoverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp  animated:YES];
             }
         }
     }else{
@@ -285,7 +286,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        [self.myPopoverControler dismissPopoverAnimated:true];
+        [self.myPopoverController dismissPopoverAnimated:true];
 
     }
 
@@ -320,7 +321,7 @@
 -(void) sendImageToServer:(UIImage*) image
 {
     [[CatchoomService sharedCatchoom] setDelegate: self];
-    [[CatchoomService sharedCatchoom]  search:image];
+    [[CatchoomService sharedCatchoom] search:image];
 
     
 }
@@ -328,11 +329,8 @@
 - (void)didReceiveSearchResponse:(NSArray *)responseObjects {
     if (_parsedElements == nil) {
         _parsedElements = [NSMutableArray array];
-    }else{
-        [_parsedElements removeAllObjects];
     }
     
-
     [_parsedElements removeAllObjects]; //remove all existing objects!
     _parsedElements = [responseObjects mutableCopy];
     
@@ -342,19 +340,17 @@
         if ([_parsedElements count] == 0) {
             NSLog(@"No matches found.");
         }
-        else if(_hasFoundMatches == FALSE)
+        else if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
         {
-            NSLog(@"%d Matches found",[_parsedElements count]);
-            
-            _hasFoundMatches = TRUE;
             [[CatchoomService sharedCatchoom] stopFinderMode];
+
+            NSLog(@"%d matches found.",[_parsedElements count]);
             
+            [self.tableView setNeedsLayout]; //Needed?
             [self.tableView reloadData];
-            
-            __weak MasterViewController *currentSelf = self;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [currentSelf willHideActivityIndicatorInMasterView];
-            });
+            [self.view setNeedsDisplay]; //Needed?
+
+            [self.tableView setScrollEnabled:TRUE];
         }
     }
     else{

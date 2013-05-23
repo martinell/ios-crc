@@ -17,7 +17,7 @@ UINavigationControllerDelegate, RKObjectLoaderDelegate, UIPopoverControllerDeleg
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) UIPopoverController *myPopoverControler;
+@property (nonatomic, strong) UIPopoverController *myPopoverController;
 
 
 

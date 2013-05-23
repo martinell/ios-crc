@@ -279,7 +279,6 @@
 		F0A1A3D215FE928400F9ACEA = {
 			isa = PBXGroup;
 			children = (
-				D3E6E19A173D2542001D7BE2 /* CoreVideo.framework */,
 				D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */,
 				D376E4D7173A8E5900E68462 /* Catchoom-iOS-CRC */,
 				F01511F916185026005D4335 /* Icon@2x.png */,
@@ -306,6 +305,7 @@
 		F0A1A3E015FE928400F9ACEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3E6E19A173D2542001D7BE2 /* CoreVideo.framework */,
 				D3E6E198173D03BB001D7BE2 /* CoreMedia.framework */,
 				D3E6E192173C6BAC001D7BE2 /* AVFoundation.framework */,
 				D3E6E190173C6B90001D7BE2 /* ImageIO.framework */,
@@ -545,7 +545,7 @@
 		F0A1A40715FE928400F9ACEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -577,7 +577,7 @@
 		F0A1A40815FE928400F9ACEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catchoom-iOS-CRC/Catchoom-iOS-CRC-Prefix.pch";
