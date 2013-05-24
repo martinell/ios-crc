@@ -335,29 +335,32 @@
         _parsedElements = [NSMutableArray array];
     }
     
-    [_parsedElements removeAllObjects]; //remove all existing objects!
-    _parsedElements = [responseObjects mutableCopy];
-    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs boolForKey:@"finder_mode"])
     {
-        if ([_parsedElements count] == 0) {
+        if ([responseObjects count] == 0) {
             NSLog(@"No matches found.");
         }
         else if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
         {
+            [_parsedElements removeAllObjects]; //remove all existing objects!
+            _parsedElements = [responseObjects mutableCopy];
+            
             [[CatchoomService sharedCatchoom] stopFinderMode];
 
             NSLog(@"%d matches found.",[_parsedElements count]);
             
-            [self.tableView setNeedsLayout]; //Needed?
+            //[self.tableView setNeedsLayout]; //Needed?
             [self.tableView reloadData];
-            [self.view setNeedsDisplay]; //Needed?
+            //[self.view setNeedsDisplay]; //Needed?
 
             [self.tableView setScrollEnabled:TRUE];
         }
     }
     else{
+        [_parsedElements removeAllObjects]; //remove all existing objects!
+        _parsedElements = [responseObjects mutableCopy];
+        
         [self.tableView reloadData];
         
         __weak MasterViewController *currentSelf = self;
