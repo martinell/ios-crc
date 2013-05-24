@@ -228,12 +228,20 @@
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController.view];
         }
-        else
+        else{
             [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.view];
+        }
     }
     else{
         [[CatchoomService sharedCatchoom] setDelegate: self];
-        [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.view];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController.view];
+        }
+        else{
+            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.view];
+        }
+        
+        
         /*
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
