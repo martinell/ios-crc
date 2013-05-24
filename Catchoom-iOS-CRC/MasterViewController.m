@@ -232,6 +232,9 @@
             [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.view];
     }
     else{
+        [[CatchoomService sharedCatchoom] setDelegate: self];
+        [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.view];
+        /*
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         {
@@ -242,6 +245,7 @@
         }
         picker.delegate = self;
         [self presentModalViewController:picker animated:YES];
+         */
     }
 }
 
