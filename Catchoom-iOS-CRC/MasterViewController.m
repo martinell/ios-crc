@@ -240,26 +240,11 @@
         else{
             [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.view];
         }
-        
-        
-        /*
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-        {
-            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            
-        }else{
-            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        }
-        picker.delegate = self;
-        [self presentModalViewController:picker animated:YES];
-         */
     }
 }
 
 - (IBAction)pickImageFromResources:(id)sender
 {
-  
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 
@@ -332,9 +317,9 @@
 
 -(void) sendImageToServer:(UIImage*) image
 {
+    
     [[CatchoomService sharedCatchoom] setDelegate: self];
     [[CatchoomService sharedCatchoom] search:image];
-
     
 }
 
@@ -351,30 +336,45 @@
         }
         else if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
         {
-            [_parsedElements removeAllObjects]; //remove all existing objects!
+            [_parsedElements removeAllObjects]; //remove all existing objects
             _parsedElements = [responseObjects mutableCopy];
             
             [[CatchoomService sharedCatchoom] stopFinderMode];
 
             NSLog(@"%d matches found.",[_parsedElements count]);
             
-            //[self.tableView setNeedsLayout]; //Needed?
             [self.tableView reloadData];
-            //[self.view setNeedsDisplay]; //Needed?
-
             [self.tableView setScrollEnabled:TRUE];
         }
     }
     else{
-        [_parsedElements removeAllObjects]; //remove all existing objects!
+        [_parsedElements removeAllObjects]; //remove all existing objects
         _parsedElements = [responseObjects mutableCopy];
         
         [self.tableView reloadData];
         
-        __weak MasterViewController *currentSelf = self;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [currentSelf willHideActivityIndicatorInMasterView];
-        });
+        NSLog(@"%d matches found.",[_parsedElements count]);
+        
+        if([_parsedElements count] == 0)
+        {
+            // The request was processed correctly. Show no match alert in _isOneShotModeON.
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"NO MATCH", @"")
+                                                            message:NSLocalizedString(@"there is no object in the collection that matches with any in the picture", @"")
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                                  otherButtonTitles: nil];
+            
+            [alert show];
+            
+        }
+        
+        if (![[CatchoomService sharedCatchoom] _isOneShotModeON]) {
+            // if the image was taken from UIImagePickerControllerSourceTypePhotoLibrary
+            __weak MasterViewController *currentSelf = self;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [currentSelf willHideActivityIndicatorInMasterView];
+            });
+        }
     }
     
 }
@@ -386,12 +386,17 @@
                                           cancelButtonTitle:NSLocalizedString(@"OK",@"")
                                           otherButtonTitles: nil];
     [alert show];
-    __weak MasterViewController *currentSelf = self;
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [currentSelf willHideActivityIndicatorInMasterView];
-    });
     
+    if ([[CatchoomService sharedCatchoom] _isOneShotModeON] || [[CatchoomService sharedCatchoom] _isFinderModeON]){
+        [self.tableView setScrollEnabled:YES];
+    }
+    else{
+        // if the image was taken from UIImagePickerControllerSourceTypePhotoLibrary
+        __weak MasterViewController *currentSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [currentSelf willHideActivityIndicatorInMasterView];
+        });
+    }    
 }
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     //delegate method that we are not going to use since we are using blocks
