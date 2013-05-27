@@ -226,19 +226,19 @@
         // Finder Mode
         [[CatchoomService sharedCatchoom] setDelegate: self];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController.view];
+            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController];
         }
         else{
-            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.view];
+            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self];
         }
     }
     else{
         [[CatchoomService sharedCatchoom] setDelegate: self];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController.view];
+            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController];
         }
         else{
-            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.view];
+            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self];
         }
     }
 }
