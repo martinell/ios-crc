@@ -475,6 +475,9 @@
         <class className="MasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="pickImageFromResources:"/>
+                <relationship kind="action" name="presentMainCatchoomView:"/>
+                <relationship kind="action" name="takeImageFromCamera:"/>
                 <relationship kind="outlet" name="cameraButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="libraryButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="retakePictureButton" candidateClass="UIBarButtonItem"/>

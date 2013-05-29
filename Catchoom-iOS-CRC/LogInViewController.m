@@ -280,22 +280,41 @@
     }
 }*/
 
+
+NSString* utm_medium = @"iOS";
+NSString* utm_source = @"CRCMobileApp";
+
 - (IBAction)didClickOnSignUp:(id)sender{
-    NSString *urlString = @"https://crs.catchoom.com/try-free?utm_source=mobileapp&utm_medium=iOS&utm_campaign=SignUpsFromMobileApp";
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString: @"https://crs.catchoom.com/try-free?utm_source="];
+    [urlString appendString:utm_source];
+    [urlString appendString:@"&utm_medium="];
+    [urlString appendString:utm_medium];
+    [urlString appendString:@"&utm_campaign=SignUp"];
+
     NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
 
 }
 
 - (IBAction)didClickOnHelpWithToken:(id)sender{
-    NSString *urlString = @"http://catchoom.com/documentation/get-started/where-do-i-get-my-token/?utm_source=mobileapp&utm_medium=iOS&utm_campaign=HelpTokenFromMobileApp";
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString: @"http://catchoom.com/documentation/get-started/where-do-i-get-my-token/?utm_source="];
+    [urlString appendString:utm_source];
+    [urlString appendString:@"&utm_medium="];
+    [urlString appendString:utm_medium];
+    [urlString appendString:@"&utm_campaign=HelpWithToken"];
+    
     NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
     
 }
 
 - (IBAction)didClickOnAboutCatchoom:(id)sender{
-    NSString *urlString = @"http://catchoom.com/?utm_source=mobileapp&utm_medium=iOS&utm_campaign=AboutCatchoomFromMobileApp";
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString: @"http://catchoom.com/?utm_source="];
+    [urlString appendString:utm_source];
+    [urlString appendString:@"&utm_medium="];
+    [urlString appendString:utm_medium];
+    [urlString appendString:@"&utm_campaign=CatchoomHome"];
+    
     NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
     
