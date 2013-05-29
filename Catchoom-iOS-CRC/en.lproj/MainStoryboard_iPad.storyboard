@@ -24,6 +24,9 @@
                                         <rect key="frame" x="457" y="299" width="415" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="N9K-HW-uTy" id="8jU-GX-3u5"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Start recognizing images today!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bOf-RT-Nqg">
                                         <rect key="frame" x="347" y="74" width="635" height="41"/>
@@ -460,6 +463,10 @@
         <class className="LogInViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LogInViewController.h"/>
             <relationships>
+                <relationship kind="action" name="didClickOnAboutCatchoom:"/>
+                <relationship kind="action" name="didClickOnHelpWithToken:"/>
+                <relationship kind="action" name="didClickOnSignUp:"/>
+                <relationship kind="action" name="didClickStartButton:"/>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tokenTextView" candidateClass="UITextField"/>
