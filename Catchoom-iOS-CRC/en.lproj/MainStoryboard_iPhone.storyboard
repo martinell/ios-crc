@@ -25,42 +25,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="OXo-kT-0ew">
-                                        <rect key="frame" x="20" y="231" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="274" width="280" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="RJ0-Jj-L4z" id="vya-hD-rHB"/>
                                         </connections>
                                     </textField>
-                                    <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="PDS-21-bQY">
-                                        <rect key="frame" x="189" y="275" width="79" height="27"/>
-                                        <color key="onTintColor" red="0.034831731471948069" green="0.33333333333333331" blue="0.0036525884383580656" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="didClickOnSwitch:" destination="RJ0-Jj-L4z" eventType="touchDown" id="sDq-vA-Gnm"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Save for next time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fah-Eh-hNf">
-                                        <rect key="frame" x="-8" y="278" width="177" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Start recognizing images today!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZMg-8J-93T">
-                                        <rect key="frame" x="17" y="52" width="287" height="26"/>
+                                        <rect key="frame" x="17" y="63" width="287" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="If you already have an account, introduce the token of your collection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WTh-M8-Zq1">
-                                        <rect key="frame" x="20" y="175" width="280" height="42"/>
+                                        <rect key="frame" x="20" y="214" width="280" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gnu-d5-VGF">
-                                        <rect key="frame" x="84" y="99" width="153" height="44"/>
+                                        <rect key="frame" x="74" y="112" width="173" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" button="YES" link="YES"/>
@@ -79,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yWx-me-qjD">
-                                        <rect key="frame" x="43" y="329" width="235" height="32"/>
+                                        <rect key="frame" x="43" y="322" width="235" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" button="YES" link="YES"/>
@@ -105,6 +92,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="smp-nc-fe4">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <items>
+                                    <barButtonItem title="About" width="78" id="Ors-4B-ScA">
+                                        <connections>
+                                            <action selector="didClickOnAboutCatchoom:" destination="RJ0-Jj-L4z" id="Bes-q8-deV"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rnY-EO-rRf"/>
                                     <barButtonItem title="Start" width="86" id="giv-c8-9bu">
                                         <color key="tintColor" red="0.49596774189999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -124,7 +116,6 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="1xe-4s-fK8" id="JDN-qh-uBD"/>
                         <outlet property="mainScrollView" destination="Ibe-34-lOB" id="lUr-90-Ihw"/>
-                        <outlet property="saveSwitch" destination="PDS-21-bQY" id="Tt2-6M-EzV"/>
                         <outlet property="tokenTextView" destination="OXo-kT-0ew" id="ZXb-M2-uye"/>
                         <segue destination="0qN-Oh-G24" kind="push" identifier="pushToTableView" id="JEo-lz-DId"/>
                     </connections>
@@ -326,6 +317,46 @@
         <image name="icomGallery.png" width="27" height="27"/>
         <image name="icon_settings.png" width="20" height="20"/>
     </resources>
+    <classes>
+        <class className="CatchoomCellView" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatchoomCellView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="logoImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="LogInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogInViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tokenTextView" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cameraButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="libraryButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="retakePictureButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SplasScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplasScreenViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -14,7 +14,7 @@
 UIScrollViewDelegate, CatchoomServiceProtocol>
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 //@property (weak, nonatomic) IBOutlet UIImageView *bubbleImageView;
-@property (weak, nonatomic) IBOutlet UITextField *collectionTextView;
+//@property (weak, nonatomic) IBOutlet UITextField *collectionTextView;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 

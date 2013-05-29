@@ -11,16 +11,15 @@
 #import "AppDelegate.h"
 
 @interface LogInViewController ()
-@property (weak, nonatomic) IBOutlet UISwitch *saveSwitch;
+//@property (weak, nonatomic) IBOutlet UISwitch *saveSwitch;
 
 @end
 
-BOOL isSaveEnabled = FALSE;
+//BOOL isTokenIntroduced = NO;
 
 @implementation LogInViewController
 
 
-#pragma mark -
 #pragma mark - view lifecicle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,14 +41,14 @@ BOOL isSaveEnabled = FALSE;
     self.mainScrollView.scrollEnabled = NO;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults boolForKey:@"isSaveEnabled"]){
-        [self.saveSwitch setOn:YES];
-        self.collectionTextView.text = [defaults valueForKey:@"collection"];
+    if([defaults boolForKey:@"isTokenIntroduced"]){
+        //[self.saveSwitch setOn:YES];
+        //self.collectionTextView.text = [defaults valueForKey:@"collection"];
         self.tokenTextView.text = [defaults valueForKey:@"token"];
     } else {
-        [defaults setObject:@"" forKey:@"collection"];
+        //[defaults setObject:@"" forKey:@"collection"];
         [defaults setObject:@"" forKey:@"token"];
-        [self.saveSwitch setOn:NO];
+        //[self.saveSwitch setOn:NO];
     }
 
     
@@ -90,10 +89,10 @@ BOOL isSaveEnabled = FALSE;
 {
     [self setBackgroundImageView:nil];
     //[self setBubbleImageView:nil];
-    [self setCollectionTextView:nil];
+    //[self setCollectionTextView:nil];
     [self setTokenTextView:nil];
     [self setMainScrollView:nil];
-    [self setSaveSwitch:nil];
+    //[self setSaveSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -145,11 +144,6 @@ BOOL isSaveEnabled = FALSE;
 }
 
 
-
-
-
-
-#pragma mark -
 #pragma mark - iPad logIn
 
 - (IBAction)didClickStartButton:(id)sender
@@ -206,7 +200,6 @@ BOOL isSaveEnabled = FALSE;
 
 
 
-#pragma mark -
 #pragma mark - textfield delegate
 
 
@@ -218,17 +211,18 @@ BOOL isSaveEnabled = FALSE;
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
-    [self setDefaultDependingOnSwitchStatus];
-    }
+    [self saveTokenInDefaults];
+
+}
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
     // called when clear button pressed. return NO to ignore (no notifications)
     return YES;
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.collectionTextView resignFirstResponder];
+    //[self.collectionTextView resignFirstResponder];
     [self.tokenTextView resignFirstResponder];
-    [self.collectionTextView resignFirstResponder];
+    //[self.collectionTextView resignFirstResponder];
     [self.tokenTextView resignFirstResponder];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
         [self.mainScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
@@ -250,8 +244,8 @@ BOOL isSaveEnabled = FALSE;
 }
 
 - (void)myKeyboardWillHideHandler:(NSNotification *)aNotification {
-    [self setDefaultDependingOnSwitchStatus];
-    [self.collectionTextView resignFirstResponder];
+    [self saveTokenInDefaults];
+    //[self.collectionTextView resignFirstResponder];
     [self.tokenTextView resignFirstResponder];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
         [self.mainScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
@@ -261,16 +255,22 @@ BOOL isSaveEnabled = FALSE;
 
 }
 
-- (void)setDefaultDependingOnSwitchStatus {
+
+- (void)saveTokenInDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:self.collectionTextView.text forKey:@"collection"];
-        [defaults setObject:self.tokenTextView.text forKey:@"token"];
-       [defaults synchronize];
-  }
-#pragma mark -
+    //[defaults setObject:self.collectionTextView.text forKey:@"collection"];
+    [defaults setObject:self.tokenTextView.text forKey:@"token"];
+    [defaults synchronize];
+
+    if(![defaults boolForKey:@"isTokenIntroduced"]){
+        [defaults setBool:YES forKey:@"isTokenIntroduced"];
+    }
+}
+
+
 #pragma mark - switch action
 
-- (IBAction)didClickOnSwitch:(id)sender {
+/*- (IBAction)didClickOnSwitch:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults boolForKey:@"isSaveEnabled"]){
         [defaults setBool:NO forKey:@"isSaveEnabled"];
@@ -278,7 +278,7 @@ BOOL isSaveEnabled = FALSE;
         [defaults setBool:YES forKey:@"isSaveEnabled"];
 
     }
-}
+}*/
 
 - (IBAction)didClickOnSignUp:(id)sender{
     NSString *urlString = @"https://crs.catchoom.com/try-free?utm_source=mobileapp&utm_medium=iOS&utm_campaign=SignUpsFromMobileApp";
