@@ -60,7 +60,7 @@ BOOL isSaveEnabled = FALSE;
     UIImage *bubbleImage = [UIImage imageNamed:@"bubble9"];
     bubbleImage = [bubbleImage stretchableImageWithLeftCapWidth:floorf(backgroundImage.size.width/2) topCapHeight:floorf(backgroundImage.size.height/2)];
     
-    self.bubbleImageView.image = bubbleImage;
+    //self.bubbleImageView.image = bubbleImage;
     
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     UIImage *titleImage = [UIImage imageNamed:@"logo_title"];
@@ -89,7 +89,7 @@ BOOL isSaveEnabled = FALSE;
 - (void)viewDidUnload
 {
     [self setBackgroundImageView:nil];
-    [self setBubbleImageView:nil];
+    //[self setBubbleImageView:nil];
     [self setCollectionTextView:nil];
     [self setTokenTextView:nil];
     [self setMainScrollView:nil];
@@ -270,7 +270,7 @@ BOOL isSaveEnabled = FALSE;
 #pragma mark -
 #pragma mark - switch action
 
-- (IBAction)didClicOnSwitch:(id)sender {
+- (IBAction)didClickOnSwitch:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults boolForKey:@"isSaveEnabled"]){
         [defaults setBool:NO forKey:@"isSaveEnabled"];
@@ -280,6 +280,18 @@ BOOL isSaveEnabled = FALSE;
     }
 }
 
+- (IBAction)didClickOnSignUp:(id)sender{
+    NSString *urlString = @"https://crs.catchoom.com/try-free?utm_source=crcapp&utm_medium=iOS&utm_campaign=SignUpsFromMobileApp";
+    NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
 
+}
+
+- (IBAction)didClickOnHelpWithToken:(id)sender{
+    NSString *urlString = @"http://catchoom.com/documentation/get-started/where-do-i-get-my-token/?utm_source=crcapp&utm_medium=iOS&utm_campaign=HelpTokenFromMobileApp";
+    NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
+    
+}
 
 @end

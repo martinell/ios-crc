@@ -65,7 +65,7 @@
 
     self.navigationItem.titleView = titleImageView;
         self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         [self performSegueWithIdentifier:@"logInSegue" sender:self];
         
@@ -73,7 +73,6 @@
         [self.navigationController setNavigationBarHidden:NO];
         self.navigationItem.hidesBackButton = YES;
     }
-
 }
 
 - (IBAction)presentMainCatchoomView:(id)sender {
@@ -215,33 +214,7 @@
 }
 
 
-
-#pragma mark -
-#pragma mark - launch camera
-
-- (IBAction)takeImageFromCamera:(id)sender
-{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if ([prefs boolForKey:@"finder_mode"]) {
-        // Finder Mode
-        [[CatchoomService sharedCatchoom] setDelegate: self];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController];
-        }
-        else{
-            [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self];
-        }
-    }
-    else{
-        [[CatchoomService sharedCatchoom] setDelegate: self];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController];
-        }
-        else{
-            [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self];
-        }
-    }
-}
+#pragma mark - Take image
 
 - (IBAction)pickImageFromResources:(id)sender
 {
@@ -275,7 +248,41 @@
     }
 }
 
-
+- (IBAction)takeImageFromCamera:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        if ([prefs boolForKey:@"finder_mode"]) {
+            // Finder Mode
+            [[CatchoomService sharedCatchoom] setDelegate: self];
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController];
+            }
+            else{
+                [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self];
+            }
+        }
+        else{
+            [[CatchoomService sharedCatchoom] setDelegate: self];
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController];
+            }
+            else{
+                [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self];
+            }
+        }
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING" ,@"")
+                                                        message:@"This device does not have a camera. Try selecting an image from your photo library."
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                              otherButtonTitles: nil];
+        [alert show];
+    }
+}
 
 #pragma mark -
 #pragma mark - image picker delegate
@@ -319,6 +326,7 @@
 {
     
     [[CatchoomService sharedCatchoom] setDelegate: self];
+    [CatchoomService sharedCatchoom]._isOneShotModeON = FALSE;
     [[CatchoomService sharedCatchoom] search:image];
     
 }
@@ -329,12 +337,12 @@
     }
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if ([prefs boolForKey:@"finder_mode"])
+    if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
     {
         if ([responseObjects count] == 0) {
             NSLog(@"No matches found.");
         }
-        else if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
+        else 
         {
             [_parsedElements removeAllObjects]; //remove all existing objects
             _parsedElements = [responseObjects mutableCopy];
@@ -413,8 +421,8 @@
 
     [self.tableView setScrollEnabled:NO];
     _activityIndicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 200)];
-    _activityIndicatorView.center = CGPointMake(self.view.frame.size.width / 2 ,
-                                                (self.view.frame.size.height / 2) - 20 );
+    _activityIndicatorView.center = CGPointMake(self.tableView.frame.size.width / 2 ,
+                                                (self.tableView.frame.size.height / 2) - 20 );
     _activityIndicatorView.layer.cornerRadius = 5.0f;
     _activityIndicatorView.layer.borderWidth = 1.0;
     _activityIndicatorView.layer.borderColor = [UIColor blackColor].CGColor;
@@ -435,7 +443,7 @@
     [activityIndicator startAnimating];
     [_activityIndicatorView addSubview:activityIndicator];
     
-    [self.view addSubview:_activityIndicatorView];
+    [self.tableView addSubview:_activityIndicatorView];
     
 }
 
