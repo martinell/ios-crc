@@ -43,8 +43,6 @@
 		D3E6E195173C6CCE001D7BE2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3E6E194173C6CCE001D7BE2 /* Settings.bundle */; };
 		D3E6E199173D03BB001D7BE2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E6E198173D03BB001D7BE2 /* CoreMedia.framework */; };
 		D3E6E19B173D2542001D7BE2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E6E19A173D2542001D7BE2 /* CoreVideo.framework */; };
-		D3E9A00117556B5B003892CE /* AR_printedmedia.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E99FFF17556B5B003892CE /* AR_printedmedia.png */; };
-		D3E9A00217556B5B003892CE /* AR_printedmedia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E9A00017556B5B003892CE /* AR_printedmedia@2x.png */; };
 		F01511F61618500B005D4335 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F51618500B005D4335 /* Icon-72.png */; };
 		F01511F816185020005D4335 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F716185020005D4335 /* Icon.png */; };
 		F01511FA16185026005D4335 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F01511F916185026005D4335 /* Icon@2x.png */; };
@@ -128,8 +126,6 @@
 		D3E6E194173C6CCE001D7BE2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		D3E6E198173D03BB001D7BE2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D3E6E19A173D2542001D7BE2 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		D3E99FFF17556B5B003892CE /* AR_printedmedia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AR_printedmedia.png; sourceTree = "<group>"; };
-		D3E9A00017556B5B003892CE /* AR_printedmedia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AR_printedmedia@2x.png"; sourceTree = "<group>"; };
 		F01511F51618500B005D4335 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		F01511F716185020005D4335 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		F01511F916185026005D4335 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -285,8 +281,6 @@
 			children = (
 				D3D1D51A173C5E3600BFEAE0 /* Catchoom-iOS-SDK.xcodeproj */,
 				D376E4D7173A8E5900E68462 /* Catchoom-iOS-CRC */,
-				D3E99FFF17556B5B003892CE /* AR_printedmedia.png */,
-				D3E9A00017556B5B003892CE /* AR_printedmedia@2x.png */,
 				F01511F916185026005D4335 /* Icon@2x.png */,
 				F01511F716185020005D4335 /* Icon.png */,
 				F01511F51618500B005D4335 /* Icon-72.png */,
@@ -427,8 +421,6 @@
 				D376E521173A8E5900E68462 /* viewport.png in Resources */,
 				D376E522173A8E5900E68462 /* viewport@2x.png in Resources */,
 				D3E6E195173C6CCE001D7BE2 /* Settings.bundle in Resources */,
-				D3E9A00117556B5B003892CE /* AR_printedmedia.png in Resources */,
-				D3E9A00217556B5B003892CE /* AR_printedmedia@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
