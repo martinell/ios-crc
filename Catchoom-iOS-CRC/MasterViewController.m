@@ -227,7 +227,6 @@ typedef enum
 
 - (IBAction)pickImageFromResources:(id)sender
 {
-    [self prepareForSearch: kImageFromPhotoLibrary];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 
@@ -315,6 +314,7 @@ typedef enum
     UIImage *image = (UIImage*)[info valueForKey:@"UIImagePickerControllerOriginalImage"];
     [picker dismissModalViewControllerAnimated:YES];
     
+    [self prepareForSearch: kImageFromPhotoLibrary];
     [self willShowActivityIndicatorInMasterView];
 
     dispatch_queue_t backgroundQueue;
@@ -345,6 +345,7 @@ typedef enum
     }
     [_parsedElements removeAllObjects];
     [self.tableView reloadData];
+    [self.tableView setScrollEnabled:NO];
     
     // Assign search type
     _sendImageType = sendImageType;
@@ -352,6 +353,15 @@ typedef enum
     // Disable settings button while search is performed.
     UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
     settingsButton.enabled = NO;
+}
+
+-(void) restoreFromSearch
+{
+    [self.tableView reloadData];
+    [self.tableView setScrollEnabled:TRUE];
+    
+    UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
+    settingsButton.enabled = YES;
 }
 
 -(void) sendImageToServer:(UIImage*) image
@@ -372,35 +382,26 @@ typedef enum
         if ([responseObjects count] == 0) {
             NSLog(@"No matches found.");
             
-            // Check if it is a request received after stopping Finder Mode
+            // Check if it is a response received after stopping Finder Mode
             if([[CatchoomService sharedCatchoom] _isFinderModeON] == FALSE)
             {
-                UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
-                settingsButton.enabled = YES;
+                [self restoreFromSearch];
             }
             
         }
-        else if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
+        else
         {
             [_parsedElements removeAllObjects]; //remove all existing objects
             _parsedElements = [responseObjects mutableCopy];
-            
-            [[CatchoomService sharedCatchoom] stopFinderMode];
 
             NSLog(@"%d matches found.",[_parsedElements count]);
             
-            [self.tableView reloadData];
-            [self.tableView setScrollEnabled:TRUE];
-            
-            UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
-            settingsButton.enabled = YES;
+            [self restoreFromSearch];
         }
     }
     else{
         [_parsedElements removeAllObjects]; //remove all existing objects
         _parsedElements = [responseObjects mutableCopy];
-        
-        [self.tableView reloadData];
         
         NSLog(@"%d matches found.",[_parsedElements count]);
         
@@ -425,8 +426,7 @@ typedef enum
             });
         }
         
-        UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
-        settingsButton.enabled = YES;
+        [self restoreFromSearch];
     }
     
 }
@@ -439,16 +439,15 @@ typedef enum
                                           otherButtonTitles: nil];
     [alert show];
     
-    if ([[CatchoomService sharedCatchoom] _isOneShotModeON] || [[CatchoomService sharedCatchoom] _isFinderModeON]){
-        [self.tableView setScrollEnabled:YES];
-    }
-    else{
+    if (_sendImageType == kImageFromPhotoLibrary) {
         // if the image was taken from UIImagePickerControllerSourceTypePhotoLibrary
         __weak MasterViewController *currentSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             [currentSelf willHideActivityIndicatorInMasterView];
         });
-    }    
+    }
+    
+    [self restoreFromSearch];
 }
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     //delegate method that we are not going to use since we are using blocks
@@ -463,7 +462,6 @@ typedef enum
 - (void)willShowActivityIndicatorInMasterView {
     [self willHideActivityIndicatorInMasterView];
 
-    [self.tableView setScrollEnabled:NO];
     _activityIndicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 200)];
     _activityIndicatorView.center = CGPointMake(self.tableView.frame.size.width / 2 ,
                                                 (self.tableView.frame.size.height / 2) - 20 );
@@ -492,9 +490,7 @@ typedef enum
 }
 
 - (void)willHideActivityIndicatorInMasterView {
-    [self.tableView setScrollEnabled:YES];
     [_activityIndicatorView removeFromSuperview];
-    
 }
 
 
