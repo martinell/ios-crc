@@ -281,17 +281,23 @@ BOOL isSaveEnabled = FALSE;
 }
 
 - (IBAction)didClickOnSignUp:(id)sender{
-    NSString *urlString = @"https://crs.catchoom.com/try-free?utm_source=crcapp&utm_medium=iOS&utm_campaign=SignUpsFromMobileApp";
+    NSString *urlString = @"https://crs.catchoom.com/try-free?utm_source=mobileapp&utm_medium=iOS&utm_campaign=SignUpsFromMobileApp";
     NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
 
 }
 
 - (IBAction)didClickOnHelpWithToken:(id)sender{
-    NSString *urlString = @"http://catchoom.com/documentation/get-started/where-do-i-get-my-token/?utm_source=crcapp&utm_medium=iOS&utm_campaign=HelpTokenFromMobileApp";
+    NSString *urlString = @"http://catchoom.com/documentation/get-started/where-do-i-get-my-token/?utm_source=mobileapp&utm_medium=iOS&utm_campaign=HelpTokenFromMobileApp";
     NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
     
 }
 
+- (IBAction)didClickOnAboutCatchoom:(id)sender{
+    NSString *urlString = @"http://catchoom.com/?utm_source=mobileapp&utm_medium=iOS&utm_campaign=AboutCatchoomFromMobileApp";
+    NSString *escaped = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:escaped]];
+    
+}
 @end

@@ -32,6 +32,13 @@
 #pragma mark -
 #pragma mark - class definition
 
+typedef enum 
+{
+    kImageFromPhotoLibrary,
+    kFinderMode,
+    kOneShotMode
+}SendImageType;
+
 @interface MasterViewController () {
     NSMutableArray *_parsedElements;
     UIView *_activityIndicatorView;
@@ -39,6 +46,8 @@
     __weak IBOutlet UIBarButtonItem *retakePictureButton;
     __weak IBOutlet UIBarButtonItem *cameraButton;
     __weak IBOutlet UIBarButtonItem *libraryButton;
+    
+    SendImageType _sendImageType;
 }
 @end
 
@@ -218,6 +227,7 @@
 
 - (IBAction)pickImageFromResources:(id)sender
 {
+    [self prepareForSearch: kImageFromPhotoLibrary];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 
@@ -252,10 +262,14 @@
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
+        
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         if ([prefs boolForKey:@"finder_mode"]) {
             // Finder Mode
             [[CatchoomService sharedCatchoom] setDelegate: self];
+            
+            [self prepareForSearch: kFinderMode];
+            
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
                 [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController];
             }
@@ -265,6 +279,9 @@
         }
         else{
             [[CatchoomService sharedCatchoom] setDelegate: self];
+            
+            [self prepareForSearch: kOneShotMode];
+            
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
                 [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController];
             }
@@ -318,9 +335,24 @@
 
 
 
-
-#pragma mark -
 #pragma mark - background thread sending image to catchoom server
+
+-(void) prepareForSearch:(SendImageType)sendImageType
+{
+    // Clean previsouly shown results
+    if (_parsedElements == nil) {
+        _parsedElements = [NSMutableArray array];
+    }
+    [_parsedElements removeAllObjects];
+    [self.tableView reloadData];
+    
+    // Assign search type
+    _sendImageType = sendImageType;
+    
+    // Disable settings button while search is performed.
+    UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
+    settingsButton.enabled = NO;
+}
 
 -(void) sendImageToServer:(UIImage*) image
 {
@@ -332,17 +364,23 @@
 }
 
 - (void)didReceiveSearchResponse:(NSArray *)responseObjects {
-    if (_parsedElements == nil) {
-        _parsedElements = [NSMutableArray array];
-    }
+
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
+//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if (_sendImageType == kFinderMode)
     {
         if ([responseObjects count] == 0) {
             NSLog(@"No matches found.");
+            
+            // Check if it is a request received after stopping Finder Mode
+            if([[CatchoomService sharedCatchoom] _isFinderModeON] == FALSE)
+            {
+                UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
+                settingsButton.enabled = YES;
+            }
+            
         }
-        else 
+        else if([[CatchoomService sharedCatchoom] _isFinderModeON] == TRUE)
         {
             [_parsedElements removeAllObjects]; //remove all existing objects
             _parsedElements = [responseObjects mutableCopy];
@@ -353,6 +391,9 @@
             
             [self.tableView reloadData];
             [self.tableView setScrollEnabled:TRUE];
+            
+            UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
+            settingsButton.enabled = YES;
         }
     }
     else{
@@ -376,13 +417,16 @@
             
         }
         
-        if (![[CatchoomService sharedCatchoom] _isOneShotModeON]) {
+        if (_sendImageType == kImageFromPhotoLibrary) {
             // if the image was taken from UIImagePickerControllerSourceTypePhotoLibrary
             __weak MasterViewController *currentSelf = self;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [currentSelf willHideActivityIndicatorInMasterView];
             });
         }
+        
+        UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
+        settingsButton.enabled = YES;
     }
     
 }
