@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D35B901B175666CF001CB8DF /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D35B901A175666CF001CB8DF /* icon_settings@2x.png */; };
 		D376E504173A8E5900E68462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D376E4D9173A8E5900E68462 /* AppDelegate.m */; };
 		D376E505173A8E5900E68462 /* bg_main.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DA173A8E5900E68462 /* bg_main.png */; };
 		D376E506173A8E5900E68462 /* bg_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D376E4DB173A8E5900E68462 /* bg_main@2x.png */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D35B901A175666CF001CB8DF /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
 		D376E4D8173A8E5900E68462 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D376E4D9173A8E5900E68462 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D376E4DA173A8E5900E68462 /* bg_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main.png; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		D376E528173A8F5100E68462 /* iPhoneRetina */ = {
 			isa = PBXGroup;
 			children = (
+				D35B901A175666CF001CB8DF /* icon_settings@2x.png */,
 				D376E4DB173A8E5900E68462 /* bg_main@2x.png */,
 				D376E4DC173A8E5900E68462 /* bubble9@2x.png */,
 				D376E4DE173A8E5900E68462 /* cameraButton@2x.png */,
@@ -421,6 +424,7 @@
 				D376E521173A8E5900E68462 /* viewport.png in Resources */,
 				D376E522173A8E5900E68462 /* viewport@2x.png in Resources */,
 				D3E6E195173C6CCE001D7BE2 /* Settings.bundle in Resources */,
+				D35B901B175666CF001CB8DF /* icon_settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
