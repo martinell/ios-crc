@@ -32,13 +32,6 @@
 #pragma mark -
 #pragma mark - class definition
 
-typedef enum 
-{
-    kImageFromPhotoLibrary,
-    kFinderMode,
-    kOneShotMode
-}SendImageType;
-
 @interface MasterViewController () {
     NSMutableArray *_parsedElements;
     UIView *_activityIndicatorView;
@@ -47,7 +40,6 @@ typedef enum
     __weak IBOutlet UIBarButtonItem *cameraButton;
     __weak IBOutlet UIBarButtonItem *libraryButton;
     
-    SendImageType _sendImageType;
 }
 @end
 
@@ -261,14 +253,12 @@ typedef enum
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
+        [[CatchoomService sharedCatchoom] setDelegate: self];
+        [self prepareForSearch];
         
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         if ([prefs boolForKey:@"finder_mode"]) {
             // Finder Mode
-            [[CatchoomService sharedCatchoom] setDelegate: self];
-            
-            [self prepareForSearch: kFinderMode];
-            
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
                 [[CatchoomService sharedCatchoom] startFinderMode:2 withPreview: self.detailViewController];
             }
@@ -277,10 +267,7 @@ typedef enum
             }
         }
         else{
-            [[CatchoomService sharedCatchoom] setDelegate: self];
-            
-            [self prepareForSearch: kOneShotMode];
-            
+       
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
                 [[CatchoomService sharedCatchoom] startOneShotModeWithPreview: self.detailViewController];
             }
@@ -314,7 +301,7 @@ typedef enum
     UIImage *image = (UIImage*)[info valueForKey:@"UIImagePickerControllerOriginalImage"];
     [picker dismissModalViewControllerAnimated:YES];
     
-    [self prepareForSearch: kImageFromPhotoLibrary];
+    [self prepareForSearch];
     [self willShowActivityIndicatorInMasterView];
 
     dispatch_queue_t backgroundQueue;
@@ -337,18 +324,16 @@ typedef enum
 
 #pragma mark - background thread sending image to catchoom server
 
--(void) prepareForSearch:(SendImageType)sendImageType
+-(void) prepareForSearch
 {
     // Clean previsouly shown results
     if (_parsedElements == nil) {
         _parsedElements = [NSMutableArray array];
     }
     [_parsedElements removeAllObjects];
+    
     [self.tableView reloadData];
     [self.tableView setScrollEnabled:NO];
-    
-    // Assign search type
-    _sendImageType = sendImageType;
     
     // Disable settings button while search is performed.
     UIBarButtonItem *settingsButton = self.navigationItem.leftBarButtonItem;
@@ -368,43 +353,20 @@ typedef enum
 {
     
     [[CatchoomService sharedCatchoom] setDelegate: self];
-    [CatchoomService sharedCatchoom]._isOneShotModeON = FALSE;
     [[CatchoomService sharedCatchoom] search:image];
     
 }
 
 - (void)didReceiveSearchResponse:(NSArray *)responseObjects {
 
+    [_parsedElements removeAllObjects]; //remove all existing objects
+    _parsedElements = [responseObjects mutableCopy];
     
-//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    if (_sendImageType == kFinderMode)
-    {
-        if ([responseObjects count] == 0) {
-            NSLog(@"No matches found.");
-            
-            // Check if it is a response received after stopping Finder Mode
-            if([[CatchoomService sharedCatchoom] _isFinderModeON] == FALSE)
-            {
-                [self restoreFromSearch];
-            }
-            
-        }
-        else
-        {
-            [_parsedElements removeAllObjects]; //remove all existing objects
-            _parsedElements = [responseObjects mutableCopy];
-
-            NSLog(@"%d matches found.",[_parsedElements count]);
-            
-            [self restoreFromSearch];
-        }
-    }
-    else{
-        [_parsedElements removeAllObjects]; //remove all existing objects
-        _parsedElements = [responseObjects mutableCopy];
-        
-        NSLog(@"%d matches found.",[_parsedElements count]);
-        
+    NSLog(@"%d matches found.",[_parsedElements count]);
+    
+    [self restoreFromSearch];
+    
+    if ([[CatchoomService sharedCatchoom] getSearchType] != kSearchTypeFinderMode) {
         if([_parsedElements count] == 0)
         {
             // The request was processed correctly. Show no match alert in _isOneShotModeON.
@@ -418,17 +380,15 @@ typedef enum
             
         }
         
-        if (_sendImageType == kImageFromPhotoLibrary) {
+        if ([[CatchoomService sharedCatchoom] getSearchType] == kSearchTypeImage) {
             // if the image was taken from UIImagePickerControllerSourceTypePhotoLibrary
             __weak MasterViewController *currentSelf = self;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [currentSelf willHideActivityIndicatorInMasterView];
             });
         }
-        
-        [self restoreFromSearch];
     }
-    
+
 }
 
 - (void)didFailLoadWithError:(NSError *)error {
@@ -439,7 +399,7 @@ typedef enum
                                           otherButtonTitles: nil];
     [alert show];
     
-    if (_sendImageType == kImageFromPhotoLibrary) {
+    if ([[CatchoomService sharedCatchoom] getSearchType] == kSearchTypeImage){
         // if the image was taken from UIImagePickerControllerSourceTypePhotoLibrary
         __weak MasterViewController *currentSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
